@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+ </head>
+ <body>
+   <h1>Your order number, <%= @order.id %></h1>
+   <div class="order-summary jumbotron">
+   <% @order.line_items.each do |item| %>
+         <%= render 'receipt_email', item: item %>
+       <% end %>
+   <h5>Total: <%= humanized_money_with_symbol @order.total_cents %></h5>
+   <h5>Email: <%= @order.email %> </h5>
+ </div>
+   <p>Have a great day!</p>
+ </body>
+</html>
