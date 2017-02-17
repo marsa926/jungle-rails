@@ -41,7 +41,7 @@
         </li>
 
          <% if current_user %>
-           <li> <%= current_user.email %> | </li>
+           <li> <%= current_user.name %> | </li>
            <li> <%= link_to "Logout", "/logout" %></li>
           <% else %>
             <li>
@@ -55,9 +55,11 @@
 
 
         <li>
+
           <%= link_to cart_path do %>
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
+
         </li>
       </ul>
 

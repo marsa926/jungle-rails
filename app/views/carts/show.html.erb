@@ -3,7 +3,7 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+ <% if cart.size > 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -47,7 +47,20 @@
           data-currency="cad">
         </script>
       <% end %>
+
     </div>
   </div>
+
+  <% else %>
+  <h1> Oops you cart is empty </h1>
+
+  <a href="http://localhost:3000/">
+  <img src="http://i0.kym-cdn.com/photos/images/original/001/140/270/b93.png"></a>
+
+
+
+
+  <%end%>
+
 
 </section>
