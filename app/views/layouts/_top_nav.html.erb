@@ -41,7 +41,7 @@
         </li>
 
          <% if current_user %>
-           <li> <%= current_user.name %> | </li>
+           <li> <%= current_user.first_name %> </li>
            <li> <%= link_to "Logout", "/logout" %></li>
           <% else %>
             <li>

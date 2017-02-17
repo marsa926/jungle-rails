@@ -1,0 +1,46 @@
+<table class="table table-striped">
+
+  <% if current_user %>
+    <%= form_for [@product, @review]  do |f| %>
+    <h4>
+      Comments:
+    </h4>
+
+
+    <%= f.text_area :description, class: 'review-text form-control' %>
+
+    <%= f.submit "Write", class: 'submit-review' %>
+      <%= f.select(:rating, [[1],[2],[3],[4],[5]], {}, {:class => 'review-select'})%>
+    <%  end %>
+  <% end %>
+
+  <br><br>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="review-header">Reviews</h2>
+  </div>
+  <div class="panel-body">
+    <% @reviews.each do |review| %>
+      <dt><%= review.user.first_name%></dt>
+      <dd><%= review.description %></dd>
+      <dt>Rating:</dt>
+      <dd>
+      <% (1..5).each do |i| %>
+        <% if (i <= review.rating) %>
+          <i style="color: #red" class="fa fa-star" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    <% if current_user && current_user.first_name == review.user.first_name %>
+      <dt>Delete:</dt>
+      <dd><%= link_to fa_icon('trash'), review_path(review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Wish to delete your review?" } %></dd>
+      <% end %>
+    <% end %>
+  </dd>
+  </div>
+</div>
+
+</table>
+

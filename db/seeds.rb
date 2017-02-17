@@ -133,4 +133,38 @@ cat3.products.create!({
 })
 
 
+User.create!({
+  first_name: 'sara',
+  last_name: 'han',
+  email: 'sara@example.com',
+  password: Faker::Internet.password(4)
+})
+
+User.create!({
+  first_name: 'sponge',
+  last_name: 'bob',
+  email: '1@example.com',
+  password: Faker::Internet.password(4)
+})
+
+Review.create!({
+  product_id: 12,
+  user_id:  1,
+  description: "so red, so unique, can't hold much but so pretty",
+  rating: 5
+  })
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: "it's alright",
+  rating: 2
+  })
+
+
+
+
+
+
+
 puts "DONE!"
