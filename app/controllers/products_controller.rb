@@ -8,7 +8,6 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
     @reviews = Review.where(product_id: params[:id]).order('created_at DESC')
     @review = Review.new()
-    # @review.user = current_user
   end
 
 end

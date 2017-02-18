@@ -4,6 +4,9 @@ before_filter :authorize
 
   def create
     values = params[:review]
+    puts "------------------"
+    puts values.to_s
+    puts "------------------"
     review = Review.new do |comment|
       comment.user = current_user
       comment.product_id = params[:product_id]
@@ -14,7 +17,7 @@ before_filter :authorize
   if review.save
       redirect_to "/products/#{params[:product_id]}"
     else
-      redirect_to "/products/#{params[:product_id]}"
+      render "/products/show"
     end
   end
 
