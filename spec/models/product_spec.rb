@@ -2,18 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
 
-  # describe 'Validations' do
-  #   it { is_expected.to validate_presence_of(:name) }
-  #   it { is_expected.to validate_presence_of(:price) }
-  #   it { is_expected.to validate_presence_of(:quantity) }
-  #   it { is_expected.to validate_presence_of(:category) }
-  # end
-  # pending "add some examples to (or delete) #{__FILE__}"
-
-
 
   describe 'validations' do
-
 
     it "should create a new valid product" do
       @Category = Category.new({name: 'Apparel'})
@@ -32,6 +22,7 @@ RSpec.describe Product, type: :model do
       expect(@product).to be_invalid
       expect(@product.errors[:name]).to include("can't be blank")
     end
+
     it "product should have a valid price" do
       @product = Product.create()
       @product.name = "NY Yanki baseball-cap"
@@ -63,6 +54,7 @@ RSpec.describe Product, type: :model do
 
       expect(@product.errors[:category]).to include("can't be blank")
     end
+
   end
 end
 
