@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
 
   belongs_to :user
   has_many :line_items
-  after_save :change_quantity
+  after_create :change_quantity
 
   monetize :total_cents, numericality: true
 

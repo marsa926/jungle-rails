@@ -11,16 +11,22 @@ RSpec.describe User, type: :model do
       @user = User.create(first_name: 'Sara', last_name: 'Han', email: 'marsa926@gmail.com', password: '00000', password_confirmation: '00000')
     end
 
+    it "should give an error if email/first_name/last_name/password is missing" do
+      @user0 = User.create()
+      @user0.valid?
+      expect(@user0.errors[:first_name]).to include("can't be blank")
+      expect(@user0.errors[:last_name]).to include("can't be blank")
+      expect(@user0.errors[:email]).to include("can't be blank")
+      expect(@user0.errors[:password]).to include("can't be blank")
+    end
 
     it "should have valid password/password confirmation" do
       expect(@user.password).to eql(@user.password_confirmation)
-
     end
 
-    it "must have valid email address" do
+    it "new user must have valid and unique email address" do
       @user1 = User.create(email: 'marsa926@gmail.com')
       expect(@user1.errors[:email]).to include("has already been taken")
-      expect(@user.email).to include(@user.email.downcase)
     end
 
     it "must have valid first/last name" do
