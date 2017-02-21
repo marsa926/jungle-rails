@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
     )
   end
 
+
   def create_order(stripe_charge)
     order = Order.new(
       email: params[:stripeEmail],

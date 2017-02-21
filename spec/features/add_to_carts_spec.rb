@@ -18,8 +18,8 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
     end
   end
 
-scenario "Click the product and navigate to a detail page" do
-    puts "I'm running"
+  scenario "Click the product and navigate to a detail page" do
+
     visit root_path
 
     # click_on 'Details »'
@@ -32,7 +32,8 @@ scenario "Click the product and navigate to a detail page" do
     # end
 
     within('nav') { expect(page).to have_content('My Cart (1)') }
-    save_screenshot
+    # save_screenshot
   end
+
 
 end
