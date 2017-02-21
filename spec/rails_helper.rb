@@ -14,6 +14,9 @@ require "capybara/poltergeist" # Add this line to require poltergeist
 # that JS driver to :poltergeist
 Capybara.javascript_driver = :poltergeist
 
+# Capybara.register_driver :poltergeist do |app|
+#   Capybara::Poltergeist::Driver.new(app, debug: true)
+# end
 
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
