@@ -46,6 +46,7 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem 'sqlite3'
 
 end
 
@@ -60,6 +61,7 @@ end
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 group :test do
