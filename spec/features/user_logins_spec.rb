@@ -9,7 +9,9 @@ RSpec.feature "UserLogins", type: :feature, js: true do
       first_name: 'sara',
       last_name: 'han',
       email: 'marsa926@gmail.com',
-      password: '0000'
+      email_confirmation: 'marsa926@gmail.com',
+      password: '0000',
+      password_confirmation: '0000'
       )
     end
 

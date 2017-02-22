@@ -42,8 +42,8 @@
                 </div>
               <% end %>
               <%= f.text_area :description, class: 'review-text form-control' %>
-              <%= f.select(:rating, [[1],[2],[3],[4],[5]], {}, {:class => 'review-select'})%>
-              <%= f.submit "Write", class: 'submit-review pull-right' %>
+              <%= f.select(:rating, [[1],[2],[3],[4],[5]], {}, {:class => 'review-select pull-right'})%>
+              <%= f.submit "Write", class: 'submit-review btn btn-xs btn-primary pull-right' %>
             <% end %>
           <% end %>
         </div>
@@ -60,6 +60,8 @@
           <div class="panel-body">
             <% @reviews.each do |review| %>
               <dt><%= review.user.first_name%></dt>
+                <dd class="pull-right"><%= link_to fa_icon('trash'), review_path(review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Wish to delete your review?" } %></dd>
+              </dd>
               <dd><%= review.description %></dd>
               <dt>Rating:</dt>
               <dd>
@@ -71,9 +73,7 @@
                 <% end %>
               <% end %>
               <% if current_user && current_user.first_name == review.user.first_name %>
-                <dt>Delete:</dt>
-                <dd><%= link_to fa_icon('trash'), review_path(review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Wish to delete your review?" } %></dd>
-              </dd>
+
               <% end %>
             <% end %>
           </div>

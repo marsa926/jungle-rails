@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   describe "validations" do
 
     before do
-      @user = User.create(first_name: 'Sara', last_name: 'Han', email: 'marsa926@gmail.com', password: '00000', password_confirmation: '00000')
+      @user = User.create(first_name: 'Sara', last_name: 'Han', email: 'marsa926@gmail.com', email_confirmation: 'marsa926@gmail.com', password: '00000', password_confirmation: '00000')
     end
 
     it "should give an error if email/first_name/last_name/password is missing" do
@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     before do
-      @user2 = User.create(first_name: 'Bob', last_name: 'Sponge', email:'2@example.com', password: "0000")
+      @user2 = User.create(first_name: 'Bob', last_name: 'Sponge', email:'2@example.com', email_confirmation:'2@example.com', password: "0000", password_confirmation: "0000")
       @user3 = User.create(email:'eXample@domain.COM')
     end
 

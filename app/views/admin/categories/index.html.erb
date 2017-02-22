@@ -5,15 +5,24 @@
   </header>
 
   <div class="well">
-    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info btn-block' %>
   </div>
 
   <div class="panel panel-default products">
-
-    <ul>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">ID</th>
+          <th class="text-center">NAME</th>
+          <th class="text-center">CREATED DATE</th>
+          <th class="text-center">LAST UPDATE AT</th>
+        </tr>
+      </thead>
+      <tbody>
         <%= render @categories %>
-    </ul>
-
+      </tbody>
+      <tfoot></tfoot>
+    </table>
   </div>
 
 </section>
