@@ -1,9 +1,19 @@
 <h1>Login</h1>
 
-<%= form_tag '/login' do %>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+  <%= form_tag '/login' do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+    Email: <%= text_field_tag :email, nil, class: 'form-control'%>
 
-<% end %>
+    Password: <%= password_field_tag :password, nil, class: 'form-control'%>
+    <br><br>
+    <%= submit_tag "Submit", class: 'form-control btn-info'%>
+
+  <% end %>
+
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>

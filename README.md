@@ -1,9 +1,26 @@
-# Jungle
+# Contribution to the Jungle-project
+  -feature/admin-basic-auth
+  -feature/empty-cart-fix
+  -feature/order-details
+  -feature/order-receipt
+  -feature/product-quantity-adjustment
+  -feature/product-ratings
+  -feature/product-specs (using RSpec)
+  -feature/setup-feature-specs (using RSpec)
+  -feature/testing-add-to-cart (using Capybara)
+  -feature/testing-home-page (using Capybara)
+  -feature/testing-product-page (using Capybara)
+  -feature/testing-user-login (using Capybara)
+  -feature/user-specs (using RSpec)
+  -feature/users
+  -heroku-deployment
+
+## Jungle
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 
-## Setup
+### Setup
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
@@ -15,14 +32,18 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
-## Stripe Testing
+### Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
-## Dependencies
+### Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+### Heroku deployment
+
+https://peaceful-journey-50438.herokuapp.com/

@@ -1,20 +1,35 @@
 <h1>Signup!</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
-<li>
-  First name: <%= f.text_field :first_name %>
-</li>
-<li>
-  Last name: <%= f.text_field :last_name %>
-</li>
-<li>
-  Email: <%= f.text_field :email %>
-</li>
-<li>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-</li>
-  <%= f.submit "Submit" %>
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+    <%= form_for :user, url: '/users' do |f| %>
+      <li>
+        First name: <%= f.text_field :first_name, class: 'form-control', placeholder: 'John' %>
+      </li>
+      <li>
+        Last name: <%= f.text_field :last_name, class: 'form-control', placeholder: 'Doe'%>
+      </li>
+      <li>
+        Email: <%= f.text_field :email, class: 'form-control', placeholder: 'example@example.com' %>
+      </li>
+      <li>
+        Email Confirmation: <%= f.text_field :email_confirmation, class: 'form-control' %>
+      </li>
+      <li>
+        Password: <%= f.password_field :password, class: 'form-control' %>
+      </li>
+      <li>
+        Password Confirmation: <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </li>
+      <br><br>
+      <%= f.submit "Submit", class: 'form-control btn btn-info' %>
+    <% end %>
 
 
-<% end %>
+
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
